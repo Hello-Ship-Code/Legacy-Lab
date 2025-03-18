@@ -1,0 +1,55 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun.lockb
+
+.DS_Store
+
+# Build output
+dist/
+build/
+out/
+.cache/
+.temp/
+.next/
+.vite/
+
+# TypeScript files
+*.tsbuildinfo
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+logs/
+*.log
+yarn.lock
+npm-debug.log
+pnpm-debug.log
+lerna-debug.log
+bun.lockb
+.log/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Testing & Coverage
+coverage/
+jest.config.js
+.vitest/

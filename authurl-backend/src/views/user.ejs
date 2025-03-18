@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short URL Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    /* User Profile Section */
+    .user-profile {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+    
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #333;
+      object-fit: cover;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- User Profile Section -->
+  <div class="user-profile">
+    <% if (user) { %>
+      <span>Welcome, <%= user.userName %></span>
+      <a href="/upload">
+        <img src="/uploads/<%= user.profilePicture %>" alt="Profile Picture" class="profile-pic">
+      </a>
+    <% } else { %>
+      <a href="/upload">
+        <img src="/default-avatar.png" alt="Default Profile Picture" class="profile-pic">
+      </a>
+    <% } %>
+  </div>
+
+  <div id="url-div">
+    <h1>Shortened URLs</h1>
+
+    <!-- URL Submission Form -->
+    <form action="/user" method="POST">
+      <label>Enter the URL</label>
+      <input type="text" placeholder="Enter the URL" id="redirectUrl" name="redirectUrl" required/>
+      <button type="submit">Add</button>
+    </form>
+
+    <h2>Existing URLs</h2>
+
+    <% if (urls && urls.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Short ID</th>
+            <th>Redirect URL</th>
+            <th>Visits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% urls.forEach(url => { %>
+            <tr>
+              <td>
+                <a href="/user/<%= url.shortId %>" target="_blank">
+                  <%= url.shortId %>
+                </a>
+              </td>
+              <td><%= url.redirectUrl %></td>
+              <td><%= url.visitHistory.length %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No URLs found. Add a new one above!</p>
+    <% } %>
+  </div>
+
+</body>
+</html>

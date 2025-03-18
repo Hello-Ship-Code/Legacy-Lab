@@ -1,0 +1,36 @@
+Here are some nice commit message ideas with emojis to keep your repository well-documented and fun!  
+
+### ✨ General Commits  
+- 🎉 Initial commit – Setting up the project!  
+- 🔥 Remove unused files – Cleaning up clutter.  
+- 📝 Update README.md – Improving documentation.  
+- 🚀 Project structure updated – Organized files for better workflow.  
+
+### 💻 Frontend Commits  
+- 🎨 Improve UI design – Updated styles and layout.  
+- 🛠️ Fix UI bug – Fixed layout issues.  
+- ⚡ Optimize code – Improved performance.  
+- 🌐 Add responsiveness – Made UI mobile-friendly.  
+- 🏗 Refactor frontend code – Cleaned up components.  
+
+### 🛠 Backend Commits  
+- 🏗 Set up Express server – Initialized backend.  
+- 🔑 Add authentication – Implemented login/logout.  
+- 🗃 Connect to MongoDB – Database integration completed.  
+- ⚡ Optimize API routes – Improved performance of API.  
+- 🐛 Fix backend bug – Resolved server issue.  
+
+### 🛠 Project Maintenance  
+- 🔧 Refactor codebase – Cleaned up structure.  
+- 🔥 Remove unused dependencies – Removed unnecessary packages.  
+- 📦 Upgrade dependencies – Updated NPM packages.  
+- 🚑 Hotfix – Quick fix for a major issue.  
+
+### 🌟 New Features  
+- ✨ Add new feature – Implemented a cool functionality.  
+- 💾 Add database support – Integrated a new DB.  
+- 📤 Deploy project – Deployed to production.  
+
+---
+
+These commit messages will keep your repo clean, organized, and easy to navigate! 🚀

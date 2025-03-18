@@ -1,0 +1,85 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+bun-debug.log*
+
+# Environment Files
+.env
+.env.*.local
+
+# Dependency directories
+node_modules/
+jspm_packages/
+__pycache__/
+venv/
+.virtualenv/
+target/
+dist/
+out/
+build/
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# TypeScript
+*.tsbuildinfo
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.mypy_cache/
+pytest_cache/
+pip-wheel-metadata/
+
+# Rust
+/target/
+Cargo.lock
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+.gradle
+/.mvn
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Go
+/bin/
+/pkg/
+*.exe
+*.test
+*.out
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Kubernetes
+.kube/
+helm-release.yaml
+
+# Misc
+*.bak
+*.swp
+*.swo
+*.swn

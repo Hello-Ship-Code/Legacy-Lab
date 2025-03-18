@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Short URL Manager</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div id="url-div">
+    <h1>Shortened URLs</h1>
+  
+
+
+    <!-- URL Submission Form -->
+    <form action="/profile/" method="POST">
+      <label>Enter the URL</label>
+      <input type="text" placeholder="Enter the URL" id="redirectUrl" name="redirectUrl" required/>
+      <button type="submit">Add</button>
+    </form>
+
+    <h2>Existing URLs</h2>
+
+    <% if (urls && urls.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Short ID</th>
+            <th>Redirect URL</th>
+            <th>Visits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% urls.forEach(url => { %>
+            <tr>
+              <td>
+                <a href="/profile/<%= url.shortId %>" target="_blank">
+                  <%= url.shortId %>
+                </a>
+              </td>
+              
+              <td><%= url.redirectUrl %></td>
+              <td><%= url.visitHistory.length %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+     
+    <% } else { %>
+      <p>No URLs found. Add a new one above!</p>
+ 
+    <% } %>
+  </div>
+</body>
+</html>

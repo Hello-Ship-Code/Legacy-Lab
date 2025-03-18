@@ -1,0 +1,38 @@
+// Prisma Schema
+// ----------------------
+generator client{
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userName String
+  profilePicture String
+  email String @unique
+  password String
+  shortUrl  Url[]
+  createdAt DateTime @default(now())
+}
+
+model Url {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  shortId String @unique
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @db.ObjectId
+  redirectUrl String 
+  visitHistory Visit[]
+  createdAt DateTime @default(now())
+}
+
+model Visit {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  url Url @relation(fields: [urlId], references: [id], onDelete: Cascade)
+  urlId String @db.ObjectId
+  timestamp DateTime @default(now())
+
+}
