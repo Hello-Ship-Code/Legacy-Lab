@@ -1,0 +1,92 @@
+/* style.css */
+
+/* Reset styles */
+body, h1, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(45deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background-size: 200% 200%; /* Expands the gradient to give it space to move */
+    animation: gradientMove 10s ease infinite; /* 10s for smooth transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%; /* Start at the left */
+    }
+    50% {
+      background-position: 100% 50%; /* Move to the right */
+    }
+    100% {
+      background-position: 0% 50%; /* Back to the left */
+    }
+  }
+  
+#container {
+    background: #ffffffd9;
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+}
+
+#result {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(161, 140, 209, 0.2);
+    border-radius: 8px;
+    color: #4a4a4a;
+    display: none; /* Initially hidden */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #a18cd1;
+    border-radius: 8px;
+    outline: none;
+    margin-bottom: 15px;
+    background: rgba(251, 194, 235, 0.1);
+    color: #4a4a4a;
+    text-align: center;
+}
+
+input[type="text"]::placeholder {
+    color: #a18cd1;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #a18cd1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #fbc2eb;
+}
